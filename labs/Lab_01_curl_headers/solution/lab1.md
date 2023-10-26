@@ -5,7 +5,7 @@
 *курл*: curl https://rgups.ru -I -v -L -k
 
 
- Connected to rgups.ru (80.72.224.90) port 443      #Соединение установлено с сайтом rgups.ru по его ip и защищеному порту
+ ```Connected to rgups.ru (80.72.224.90) port 443      #Соединение установлено с сайтом rgups.ru по его ip и защищеному порту
 * schannel: disabled automatic use of client certificate # настройки безопасности отключены, омон вроде не должен приехать
   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:- 			#Информация о том сколько времени занял запрос, очень шустро на самом деле						 
   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:-       #тоже самое что и предыдущая строка                      
@@ -37,14 +37,14 @@ Set-Cookie: wire=d402d256807cbcc7014f7eb0054d7543; path=/; HttpOnly; SameSite=La
 Expires: Thu, 19 Nov 1981 08:52:00 GMT
 Cache-Control: no-store, no-cache, must-revalidate
 Pragma: no-cache
-
+```
 
 
 
 Запрос для : GitHub
 *курл*: curl https://github.com -I -v -L -k
 
-
+```
 * processing: https://github.com
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -105,12 +105,12 @@ X-GitHub-Request-Id: F64B:A497:261FDFA:26BBF12:651E7D41
 
 
 * Connection #0 to host github.com left intact
-
+```
 
 Запрос для : RZD
 *курл*: curl www.rzd.ru -I -v -L -k --User-agent "Google"
 
-
+```
 processing: www.rzd.ru
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -176,9 +176,10 @@ X-XSS-Protection: 1; mode=block
 
 
 * Connection #1 to host www.rzd.ru left intact
-
-
-
+```
+Запрос для : Yandex
+*курл*: curl www.yandex.ru -I -v -L -k --User-agent "Google"
+```
  processing: www.yandex.ru
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -258,8 +259,11 @@ X-Yandex-Req-Id: 1698318621804156-1551695060278061231400192-protars.dzeninfra.ru
 
 
 * Connection #1 to host dzen.ru left intact
+```
+Запрос для : Python
+*курл*: curl www.python.org -I -v -L -k --User-agent "Google"
 
-
+```
 processing: www.python.org
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -320,16 +324,11 @@ processing: www.python.org
 < X-Timer: S1698318816.708848,VS0,VE0
 < Vary: Cookie
 < Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+```
+Запрос для : Saing GIT
+*курл*: curl www.git-scm.com -I -v -L -k --User-agent "Google"
 
-
-
-
-
-
-
-
-
-
+```
 processing: www.git-scm.com
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -430,8 +429,10 @@ X-Amz-Cf-Id: 8DV6_3DOurjX5ZoaJSbrXPn-JMQa739l_mU4d73VtXvpyYnBnf1_Ew==
 
 
 * Connection #1 to host www.jetbrains.com left intact
-
-
+```
+Запрос для : VSC
+*курл*: curl https://code.visualstudio.com -I -v -L -k --User-agent "Google"
+```
  processing: https://code.visualstudio.com/
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -478,4 +479,4 @@ Accept-Ranges: bytes
 
 
 * Connection #0 to host code.visualstudio.com left intact
-
+```
