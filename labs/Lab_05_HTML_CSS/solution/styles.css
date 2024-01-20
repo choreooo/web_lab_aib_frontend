@@ -11,7 +11,7 @@ main{
   margin-left: 10px;
 }
 .logo {
-  background: #000;
+  background: brown;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -29,7 +29,8 @@ nav {
 .topnav {
   background-color: #fff;
   font-size: 14px;
-  margin-top: 40px;
+  margin-top: 40px; 
+  text-align: center;
 }
 .topnav a {
   color: #000;
