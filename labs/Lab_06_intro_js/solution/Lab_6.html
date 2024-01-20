@@ -1,104 +1,130 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
 </head>
 <body>
-    <script>
-        console.log("1 задание");
-        let apple = 10;
-        alert(apple);
-        console.log(apple);
-        let possibleConditions = ["Солнечно", "Облачно", "Дождь", "Снег", "Туман"];
-        let randomIndex = Math.floor(Math.random() * possibleConditions.length);
-        let condition = possibleConditions[randomIndex];
-        console.log("На улице сегодня "+ condition);
+<script>
+    //Задача 1
+    const apple = 10
 
-        console.log("\n2 задание");
-        let int = 30;
-        let str = "100";
-        let bool = true;
-        console.log(int+str);
-        console.log(int+bool);
-        console.log(bool+str);
-        console.log(bool+int);
-        console.log(str+int);
-        console.log(str+bool);
+    alert(apple)
+    console.log(apple)
 
-        console.log("\n3 задание");
-        let mas = [];
-        for (let i = 0; i < 10; i++){
-            let rand = Math.floor(Math.random() * 101) - 50;
-            mas.push(rand);
-        }
-        console.log(mas);
-        let filtrMas = mas.filter(function(c){
-            return c>=0;
-        });
-        console.log(filtrMas);
-
-        console.log("\n4 задание");
-        function GetFirstRandom(){
-            return Math.random();
-        }
-        let a = GetFirstRandom();
-        console.log(a);
-        let newArray = [1,2,3];
-        function MultiplyArray(mass, index){
-            return mass.map(function(element){
-                return element * index;
-            });
-        }
-
-        console.log(MultiplyArray(newArray, 2));
-        const generateRandomWord = () => {
-            const words = ["apple", "banana", "cherry", "date", "grape", "kiwi", "lemon", "mango", "orange", "peach", "pear", "strawberry", "watermelon"];
-            const randomIndex = Math.floor(Math.random() * words.length);
-            return words[randomIndex];
-        };
-        console.log(generateRandomWord());
-
-        console.log("\n5 задание");
-        // Создаем пустой объект
-        let person = {};
-        // Добавляем поля
-        person.firstName = "Иван";
-        person.surname = "Гергель";
-        person.patronymic = "Николаевич";
-        person.birthday = 2003;
-        person.hobby = "Ресторан: ОСАКА";
-        person.group = "АСБ-3-036";
-        // Метод, возвращающий ФИО, год рождения, хобби и возраст
-        person.getInfo = function() {
-            return `ФИО: ${this.surname} ${this.firstName} ${this.patronymic}\nГод рождения: ${this.birthday}\nХобби: ${this.hobby}\nВозраст: ${2023-this.birthday} лет`;
-        };
-        // Вызываем метод и выводим результат через alert
-        alert(person.getInfo());
-        // Создаем объект с зарплатами сотрудников
-        let salaries = {
-            "Сотрудник1": 10000,
-            "Сотрудник2": 60400,
-            "Сотрудник3": 55300,
-            "Сотрудник4": 10400,
-            "Сотрудник5": 35000,
-            "Сотрудник6": 48500,
-            "Сотрудник7": 41700,
-            "Сотрудник8": 44000,
-            "Сотрудник9": 84000,
-            "Сотрудник10": 27000,
-        };
-        // Вычисляем общую зарплату сотрудников
-        let totalSalary = 0;
-        for (let employee in salaries) {
-            totalSalary += salaries[employee];
-        }
-        
-        console.log(`Общая зарплата сотрудников: ${totalSalary}`);
+    const condition = 'first'
+    console.log('Good game is ' + condition)
 
 
-        
-    </script>
+    //Задача 2
+    const num = 2
+    const string = '100'
+    const bool = true
+
+    console.log(num + string)
+    console.log(num + bool)
+    console.log(string + num)
+    console.log(string + bool)
+    console.log(bool + num)
+    console.log(bool + string)
+
+
+    //Задача 3
+    const array = []
+    for (let i = 0; i < 10; i++) {
+      let numAdd = Math.floor(Math.random() * 20) - 10
+      array.push(numAdd)
+    }
+
+    const filterArr = array.filter((item) => {
+      return item > 0
+    })
+
+    console.log(`Исходный массив: ${array}\nОтфильтрованный массив: ${filterArr}`)
+
+
+    //Задача 4
+
+    const randomNum = (max, min) => {
+      return Math.floor(Math.random() * max - min + 1)
+    }
+
+    const random = randomNum(100, 2)
+    console.log(random)
+
+    const array = [1, 2, 3, 4, 5]
+    const multNum = 5
+
+    const multArray = (arr, num) => {
+      const res = arr.map((item) => {
+        return item * num
+      })
+      return res
+    }
+    console.log(multArray(array, multNum))
+
+    const generateWord = () => {
+      const alphabet = 'dsnfsjlfnsjfnskjfs'
+      const wordLength = Math.floor(Math.random() * 7) + 1 
+      let randomWord = ''
+
+      for (let i = 0; i < wordLength; i++) {
+        const randomIndex = Math.floor(Math.random() * alphabet.length)
+        randomWord += alphabet.charAt(randomIndex)
+      }
+      return randomWord
+    }
+    console.log(generateWord())
+
+
+    const obj = {}
+
+    obj.firstName = 'Я'
+    obj.surname = 'Я'
+    obj.patronymic = 'Я'
+    obj.birthday = 2003
+    obj.hobby = 'Качаться'
+    obj.group = 'АИБ-3-042'
+
+
+    obj.FIO = function() {
+        return `${this.surname} ${this.firstName} ${this.patronymic}`
+      }
+
+    obj.getFullInfo = function() {
+      const fullName = obj.FIO('surname', 'firstName', 'patronymic')
+      const birthYear = this.birthday
+      const personHobby = this.hobby
+      const currentDate = new Date()
+      const currentYear = currentDate.getFullYear()
+      const age = currentYear - birthYear
+      return `ФИО: ${fullName}, \nГод рождения: ${birthYear}, \nХобби: ${personHobby},\nВозраст: ${age}`
+    }
+
+    console.log(obj.getFullInfo())
+
+
+    //Задача 5.2
+    const salary = {
+      'Первый': 300000,
+      'Второй': 100000,
+      'Третий': 50000,
+      'Четвертый': 10000,
+      'Восьмой': 45000,
+      'Десятый': 60000,
+      'Пятый': 120000,
+      'УУУУ': 150000,
+      'ЕЕЕЕ': 1000000,
+      'дада': 0,
+    }
+
+    let sumSal = 0
+
+    for (const value in salary) {
+      sumSal += salary[value]
+    }
+    console.log(sumSal)
+ </script>
 </body>
 </html>
